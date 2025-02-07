@@ -59,7 +59,6 @@ function LoginPage() {
         onError: (error: any) => {
           const errorMessage =
             error.response?.data?.message || "Invalid credentials. Please try again.";
-          toast.error(errorMessage);
           toast.error(errorMessage, {
             position: "top-center",
             autoClose: 5000,
