@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "mulish";
+  src: url('../font/Mulish.ttf');
+}
+
+
+
+body {
+  font-family: 'mulish' !important;
+  width: 100%;
+  font-size: 16px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .zoom-out {
+    zoom: 70%;
+  }
+}
+
+
+.t40-container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 768px) {
+  .t40-container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .t40-container {
+    width: 1024px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .t40-container {
+    padding-right: 5px;
+    padding-left: 5px;
+    width: 1170px;
+  }
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button,
+input[type='number'] {
+  appearance: none;
+  appearance: textfield !important;
+  -webkit-appearance: none !important;
+  margin: 0 !important;
+  -moz-appearance: textfield !important;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d3d8d8;
+  border-radius: 8px;
+}
+
+
+input::-ms-reveal,
+input::-ms-clear {
+  display: none;
+}
