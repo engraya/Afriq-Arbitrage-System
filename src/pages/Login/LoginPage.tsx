@@ -22,7 +22,6 @@ function LoginPage() {
       navigate("/auth/request-reset-password");
     };
     
-  
     const [formData, setFormData] = useState({
       email: "",
       password: "",
@@ -44,16 +43,34 @@ function LoginPage() {
       },
       {
         onSuccess: (data) => {
-          toast.success("Login successful!!...");
+          toast.success('Login successful!!...', {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light"
+            });
           dispatch(loginUser(data));
-          console.log("Login Data", data)
-          navigate("/"); // Redirect to dashboard
+          navigate("/"); 
         },
         onError: (error: any) => {
           const errorMessage =
             error.response?.data?.message || "Invalid credentials. Please try again.";
           toast.error(errorMessage);
-          navigate("/"); // Redirect to dashboard
+          toast.error(errorMessage, {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light"
+            });
+          navigate("/");
         },
       }
     );

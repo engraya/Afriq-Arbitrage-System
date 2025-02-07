@@ -43,14 +43,32 @@ function SignUpPage() {
       },
       {
         onSuccess: (data) => {
-          toast.success("Registration successful! Please verify your email.");
+          toast.success("Registration successful! Please verify your email.",  {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light"
+            });
           dispatch(setEmailForVerification(data.user.email)); // Dispatch the email
           navigate("/auth/verify"); // Redirect to email verification page
         },
         onError: (error: any) => {
           const errorMessage =
             error.response?.data?.message || "Something went wrong.";
-          toast.error(errorMessage);
+          toast.error(errorMessage, {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light"
+            });
         },
       }
     );
