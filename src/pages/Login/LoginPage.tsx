@@ -57,9 +57,7 @@ function LoginPage() {
           navigate("/"); 
         },
         onError: (error: any) => {
-          const errorMessage =
-            error?.data?.message || "Something went wrong. Please try again!.";
-          toast.error(errorMessage, {
+          toast.error(error.response?.data?.message, {
             position: "top-center",
             autoClose: 5000,
             hideProgressBar: false,
